@@ -372,10 +372,24 @@ font-size:38px;
 
 function toggleMenu(){
 
-    document.querySelector("nav")
+    document.getElementById("menu")
     .classList.toggle("active");
 
 }
+
+
+// chiude il menu dopo aver scelto una sezione
+
+document.querySelectorAll("#menu a").forEach(function(link){
+
+    link.addEventListener("click", function(){
+
+        document.getElementById("menu")
+        .classList.remove("active");
+
+    });
+
+});
 
 </script>
     
