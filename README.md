@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nome Artista | Contemporary Painter</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f7f6f2;
+    color:#111;
+    font-family:"Helvetica Neue", Arial, sans-serif;
+}
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:35px 6%;
+    display:flex;
+    justify-content:space-between;
+    z-index:10;
+    mix-blend-mode:multiply;
+}
+
+.logo{
+    font-size:22px;
+    letter-spacing:4px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#111;
+    margin-left:30px;
+    font-size:13px;
+    text-transform:uppercase;
+}
+
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+}
+
+.hero h1{
+    font-size:clamp(60px,10vw,150px);
+    font-weight:300;
+    line-height:.9;
+    animation:fadeUp 1.5s ease;
+}
+
+.hero p{
+    margin-top:40px;
+    max-width:500px;
+    font-size:20px;
+    color:#555;
+    animation:fadeUp 2s ease;
+}
+
+
+/* SEZIONI */
+
+section{
+    padding:120px 8%;
+}
+
+.title{
+    font-size:50px;
+    font-weight:300;
+    margin-bottom:70px;
+}
+
+
+/* GALLERIA */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    gap:50px;
+}
+
+
+.work{
+    cursor:pointer;
+    opacity:0;
+    transform:translateY(50px);
+    animation:appear 1s forwards;
+}
+
+
+.work:nth-child(1){
+    grid-column:1/7;
+}
+
+.work:nth-child(2){
+    grid-column:7/13;
+    margin-top:120px;
+}
+
+.work:nth-child(3){
+    grid-column:3/10;
+}
+
+
+.work img{
+    width:100%;
+    display:block;
+    transition:.6s;
+}
+
+.work:hover img{
+    transform:scale(1.03);
+}
+
+
+.caption{
+    padding-top:20px;
+}
+
+.caption h3{
+    font-weight:400;
+    font-size:22px;
+}
+
+.caption p{
+    margin-top:8px;
+    color:#777;
+}
+
+
+
+/* LIGHTBOX */
+
+.lightbox{
+
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.95);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:100;
+}
+
+
+.lightbox img{
+
+    max-width:90%;
+    max-height:90%;
+    object-fit:contain;
+
+}
+
+
+.close{
+
+    position:absolute;
+    top:40px;
+    right:50px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+
+}
+
+
+/* BIO */
+
+.bio{
+
+max-width:750px;
+font-size:22px;
+line-height:1.8;
+
+}
+
+
+/* FOOTER */
+
+footer{
+
+padding:50px 8%;
+border-top:1px solid #ddd;
+color:#777;
+
+}
+
+
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:none;
+}
+
+}
+
+
+@keyframes appear{
+
+to{
+opacity:1;
+transform:none;
+}
+
+}
+
+
+
+@media(max-width:800px){
+
+header{
+padding:25px;
+}
+
+nav{
+display:none;
+}
+
+.gallery{
+display:block;
+}
+
+.work,
+.work:nth-child(2),
+.work:nth-child(3){
+margin-bottom:60px;
+}
+
+.title{
+font-size:38px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+LUCA ROSSI
+</div>
+
+<nav>
+<a href="#opere">Opere</a>
+<a href="#biografia">Biografia</a>
+<a href="#contatti">Contatti</a>
+</nav>
+
+</header>
+
+
+
+<section class="hero">
+
+<div>
+
+<h1>
+Materia<br>
+Silenziosa
+</h1>
+
+<p>
+Pittura contemporanea attraverso colore,
+superficie e memoria.
+</p>
+
+</div>
+
+</section>
+
+
+
+<section id="opere">
+
+<h2 class="title">
+Opere selezionate
+</h2>
+
+
+<div class="gallery">
+
+
+<div class="work" onclick="openImage('immagini/opera1.jpg')">
+
+<img src="immagini/opera1.jpg">
+
+<div class="caption">
+
+<h3>Frammento I</h3>
+<p>Olio su tela · 2026</p>
+
+</div>
+
+</div>
+
+
+
+<div class="work" onclick="openImage('immagini/opera2.jpg')">
+
+<img src="immagini/opera2.jpg">
+
+<div class="caption">
+
+<h3>Materia Verticale</h3>
+<p>Tecnica mista · 2025</p>
+
+</div>
+
+</div>
+
+
+
+<div class="work" onclick="openImage('immagini/opera3.jpg')">
+
+<img src="immagini/opera3.jpg">
+
+<div class="caption">
+
+<h3>Paesaggio Interiore</h3>
+<p>Acrilico su tela · 2025</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+<section id="biografia">
+
+<h2 class="title">
+Biografia
+</h2>
+
+<div class="bio">
+
+<p>
+La ricerca artistica di Luca Rossi nasce dal dialogo
+tra materia e percezione. Il colore diventa superficie,
+traccia e memoria.
+</p>
+
+<p>
+Le sue opere sono state presentate in mostre personali
+e collettive in Italia e all'estero.
+</p>
+
+</div>
+
+</section>
+
+
+
+
+<section id="contatti">
+
+<h2 class="title">
+Contatti
+</h2>
+
+<p class="bio">
+
+studio@lucarossi.it<br>
+Instagram: @lucarossi.art
+
+</p>
+
+</section>
+
+
+
+<footer>
+
+© 2026 Luca Rossi
+
+</footer>
+
+
+
+<div class="lightbox" id="lightbox">
+
+<div class="close" onclick="closeImage()">×</div>
+
+<img id="lightImage">
+
+</div>
+
+
+
+<script>
+
+function openImage(src){
+
+document.getElementById("lightImage").src=src;
+
+document.getElementById("lightbox").style.display="flex";
+
+}
+
+
+function closeImage(){
+
+document.getElementById("lightbox").style.display="none";
+
+}
+
+
+document.addEventListener("keydown",function(e){
+
+if(e.key==="Escape"){
+closeImage();
+}
+
+});
+
+
+</script>
+
+
+
+</body>
+</html>
