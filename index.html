@@ -246,24 +246,39 @@ padding:25px;
 }
 
 
+.menu-toggle{
+    display:block;
+    background:none;
+    border:none;
+    font-size:28px;
+    cursor:pointer;
+    z-index:20;
+}
+
+
 nav{
-    display:none;
-    position:absolute;
-    top:80px;
-    right:25px;
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:75%;
+    height:100vh;
     background:#f7f6f2;
-    padding:25px;
+    padding:100px 40px;
+    display:flex;
+    flex-direction:column;
+    transition:0.5s ease;
+    z-index:15;
 }
 
 
 nav.active{
-    display:flex;
-    flex-direction:column;
+    right:0;
 }
 
 
 nav a{
-    margin:10px 0;
+    margin:20px 0;
+    font-size:18px;
 }
 
 .gallery{
