@@ -269,21 +269,21 @@ padding:25px;
 nav{
     position:fixed;
     top:0;
-    right:-100%;
-    width:75%;
+    right:-400px;
+    width:350px;
     height:100vh;
     background:#f7f6f2;
-    padding:100px 40px;
+    padding:120px 50px;
     display:flex;
     flex-direction:column;
-    transition:0.5s ease;
-    z-index:15;
+    transition:.5s ease;
+    z-index:90;
 }
-
 
 nav.active{
     right:0;
 }
+
 
 
 nav a{
@@ -331,18 +331,18 @@ function toggleMenu(){
 LUCA ROSSI
 </a>
 
-<nav>
+<button class="menu-toggle" onclick="toggleMenu()">
+    ☰
+</button>
+    
+</header>
+
+    <nav>
 <a href="#home">Home</a>
 <a href="#opere">Opere</a>
 <a href="#biografia">Biografia</a>
 <a href="#contatti">Contatti</a>
 </nav>
-
-</header>
-
-    <button class="menu-toggle" onclick="toggleMenu()">
-    ☰
-</button>
     
 
 <section class="hero" id="home">
