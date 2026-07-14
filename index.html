@@ -8,8 +8,69 @@
 
 <style>
 
+    
 html{
     scroll-behavior:smooth;
+}
+
+    .menu-toggle{
+
+    position:fixed;
+    top:35px;
+    right:40px;
+
+    background:none;
+    border:none;
+
+    font-size:32px;
+    cursor:pointer;
+
+    z-index:1000;
+
+}
+
+
+#menu{
+
+    position:fixed;
+
+    top:0;
+    right:-400px;
+
+    width:350px;
+    height:100vh;
+
+    background:#f7f6f2;
+
+    padding:120px 50px;
+
+    display:flex;
+    flex-direction:column;
+
+    transition:0.5s ease;
+
+    z-index:900;
+
+}
+
+
+#menu.active{
+
+    right:0;
+
+}
+
+
+#menu a{
+
+    text-decoration:none;
+
+    color:#111;
+
+    font-size:22px;
+
+    margin-bottom:30px;
+
 }
     
 *{
@@ -42,13 +103,6 @@ header{
     color:#111;
 }
 
-nav a{
-    text-decoration:none;
-    color:#111;
-    margin:20px 0;
-    font-size:20px;
-    font-weight:300;
-}
 
 
 /* HERO */
