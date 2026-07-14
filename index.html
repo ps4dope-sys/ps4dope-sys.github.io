@@ -237,8 +237,33 @@ header{
 padding:25px;
 }
 
+.menu-toggle{
+    display:block;
+    background:none;
+    border:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+
 nav{
-display:none;
+    display:none;
+    position:absolute;
+    top:80px;
+    right:25px;
+    background:#f7f6f2;
+    padding:25px;
+}
+
+
+nav.active{
+    display:flex;
+    flex-direction:column;
+}
+
+
+nav a{
+    margin:10px 0;
 }
 
 .gallery{
@@ -264,7 +289,17 @@ font-size:38px;
 
 <body>
 
+<script>
 
+function toggleMenu(){
+
+    document.querySelector("nav")
+    .classList.toggle("active");
+
+}
+
+</script>
+    
 <header>
 
 <a href="#home" class="logo">
@@ -280,6 +315,9 @@ LUCA ROSSI
 
 </header>
 
+    <button class="menu-toggle" onclick="toggleMenu()">
+☰
+</button>
 
 
 <section class="hero" id="home">
